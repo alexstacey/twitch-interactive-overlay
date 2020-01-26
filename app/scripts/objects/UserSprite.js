@@ -5,10 +5,10 @@ import {
   PEASANT,
   KNIGHT,
   SKELETON,
-  SANTA,
   SNOWMAN,
 } from '@/constants/characters';
 import { getUserIntItem, setUserItem } from '@/helpers/PersistedStorage';
+import { initUserMachineService } from '@/state-machines/user/machine';
 
 const V_JUMP = -400;
 const V_WALK = 100;
@@ -153,9 +153,10 @@ export default class UserSprite extends BaseSprite {
     this.flags = config.flags;
 
     if (this.flags && this.flags.subscriber) {
-      // this.changeCharacter(KNIGHT);
-      this.changeCharacter(SANTA);
+      this.changeCharacter(KNIGHT);
     }
+
+    this.stateService = initUserMachineService();
 
     this.stillFrame = config.frame;
     this.body.onCollide = true;
@@ -341,9 +342,9 @@ export default class UserSprite extends BaseSprite {
     });
   }
 
-  jump() {
+  jump(vJumpModifier = 1) {
     if (this.onGround) {
-      this.body.setVelocityY(V_JUMP * this.gravityModifier);
+      this.body.setVelocityY((V_JUMP * vJumpModifier) * this.gravityModifier);
     }
   }
 
@@ -486,6 +487,18 @@ export default class UserSprite extends BaseSprite {
   lurk() {
     this.displaySpeechBubble('lurk sha sha');
     this.removeNameTag();
+  }
+
+  hulkSmash() {
+    // Hulk Smash State
+    // - Idle
+    // - Jumping
+    // - Landing (Will trigger explosion)
+    // - Shockwave (For other character to get hurt)
+    // - Idle
+    // Make it so other sprite get pushed away by this sprite
+    this.body.setImmovable(true);
+    this.jump(2);
   }
 
   remove() {
