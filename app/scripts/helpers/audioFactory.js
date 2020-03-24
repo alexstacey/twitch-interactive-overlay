@@ -2,6 +2,57 @@ import { canTriggerCommand } from './phaserHelpers';
 
 export const AUDIO_COMMANDS = [
   {
+    command: 'bomboclot',
+    file: 'audio/bomboclot.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'junglist',
+    file: 'audio/junglist.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'moremusic',
+    file: 'audio/more_music.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'order',
+    file: 'audio/order1.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'order2',
+    file: 'audio/order2.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'pullup',
+    file: 'audio/pull_up.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'raygun',
+    file: 'audio/ray_gun.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'washhands',
+    file: 'audio/wash_your_hands.mp3',
+    config: { volume: 1 },
+  },
+  {
+    command: 'explode',
+    file: 'audio/explode.mp3',
+    config: { volume: 0.1 },
+  },
+  {
+    command: 'airhorn',
+    file: 'audio/airhorn.mp3',
+    config: { volume: 0.1 },
+  },
+  /*
+  {
     command: 'raid_alert',
     file: 'audio/alarm.wav',
     config: { volume: 0.20 },
@@ -51,11 +102,6 @@ export const AUDIO_COMMANDS = [
     config: { volume: 0.15 },
   },
   {
-    command: 'airhorn',
-    file: 'audio/airhorn.mp3',
-    config: { volume: 0.1 },
-  },
-  {
     command: 'squirrel',
     file: 'audio/squirrel.mp3',
     config: { volume: 1 },
@@ -69,11 +115,6 @@ export const AUDIO_COMMANDS = [
     command: 'honk',
     file: 'audio/honk.mp3',
     config: { volume: 1 },
-  },
-  {
-    command: 'explode',
-    file: 'audio/explode.wav',
-    config: { volume: 0.1 },
   },
   {
     command: 'boring',
@@ -145,6 +186,7 @@ export const AUDIO_COMMANDS = [
     file: 'audio/push-it.mp3',
     config: { volume: 0.6 },
   },
+  */
 ];
 
 /**
