@@ -14,6 +14,9 @@ const V_RUN = 200;
 
 const RUN_THRESHOLD = 150;
 const WALK = 0;
+
+const ORIG_SCALE = 0.7;
+
 // const RUN = 1;
 // const JUMP = 2;
 
@@ -169,6 +172,8 @@ export default class UserSprite extends BaseSprite {
     this.lurking = true;
     /** If the sprite is not touching the ground then it should be a skeleton */
     this.knitCodeMonkeyState = false;
+
+    this.setScale(ORIG_SCALE);
 
     this.setOrigin(0.5);
     this.body.setVelocity(V_RUN*((Math.random())-0.5), 0);
@@ -423,11 +428,11 @@ export default class UserSprite extends BaseSprite {
   }
 
   makeGiant() {
-    this.setScale(4);
+    this.setScale(3);
     // Attempting to adjust hitbox of sprite
-    const frame = this.anims.currentAnim.getFrameAt(0).frame;
-    this.body.setSize(frame.width, frame.height);
-    this.createDelayedCall(20000, () => this.setScale(1));
+    //const frame = this.anims.currentAnim.getFrameAt(0).frame;
+    //this.body.setSize(frame.width, frame.height);
+    this.createDelayedCall(20000, () => this.setScale(ORIG_SCALE));
   }
 
   moveText() {
