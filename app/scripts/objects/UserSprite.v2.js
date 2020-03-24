@@ -171,7 +171,7 @@ export default class UserSprite extends BaseSprite {
     this.knitCodeMonkeyState = false;
 
     this.setOrigin(0.5);
-
+    this.body.setVelocity(V_RUN*((Math.random())-0.5), 0);
     // this.anims.play(`${this.character}_walk`);
 
     config.scene.events.on('userChatAction', this.handleChatEvent, this);
@@ -206,6 +206,8 @@ export default class UserSprite extends BaseSprite {
     // Attempt to adjust hitbox of sprite
     // const frame = this.anims.currentAnim.getFrameAt(0).frame;
     // this.body.setSize(frame.width, frame.height);
+
+    this.body.setCircle(this.texture.width/2);
 
     if (this.isDead) {
       this.body.setVelocity(0, 300);
