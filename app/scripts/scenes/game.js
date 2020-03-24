@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import ComfyJS from 'comfy.js';
-import UserSprite from '../objects/UserSprite';
+import UserSprite from '../objects/UserSprite.v2';
 import bitCreatorFactory from '../helpers/bitsCreatorFactory';
 import { buildExplosion } from '../helpers/particleFactory';
 import TextBox from '../objects/TextBox';
@@ -132,6 +132,8 @@ export default class Game extends Phaser.Scene {
     ComfyJS.Init(channel, null, [channel]);
 
     ComfyJS.onJoin = (user, self) => {
+      // eslint-disable-next-line no-console
+      console.log('onJoin', user);
       if (this.userGroup.getChildren().length >= 40) {
         return;
       }
@@ -163,6 +165,8 @@ export default class Game extends Phaser.Scene {
       if (sprite) {
         sprite.displayNameText();
         sprite.displaySpeechBubble(message, extra);
+        sprite.lurking = false;
+        sprite.selectAnimation();
 
         if (/^(hi|hey|hello|howdy)$/i.exec(message)) {
           this.sound.play('hello');
