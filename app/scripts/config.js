@@ -18,12 +18,14 @@ export const debug = true;
 /**
  *  Game canvas width.
  */
-export const width = 2560;
+//export const width = 2560;
+export const width = 1280;
 
 /**
  *  Game canvas height.
  */
-export const height = 1440;
+//export const height = 1440;
+export const height = 720;
 
 /**
  *  Adjust zoom factor.
@@ -86,7 +88,7 @@ export const physics = {
   arcade: {
     // debug: true,
     gravity: {
-      y: 400,
+      y: 300,
     },
   },
 

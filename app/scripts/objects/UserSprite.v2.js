@@ -308,6 +308,7 @@ export default class UserSprite extends BaseSprite {
 
   initMovementTimer() {
     const secDelay = Phaser.Math.Between(10000, 20000);
+    //const secDelay = Phaser.Math.Between(1000, 2000);
 
     this.createDelayedCall(secDelay, () => {
       this.randomMovement();
@@ -348,6 +349,8 @@ export default class UserSprite extends BaseSprite {
 
   jump() {
     if (this.onGround) {
+      const horiz_motion = Phaser.Math.Between(-300, 300);
+      this.body.setVelocityX(horiz_motion);
       this.body.setVelocityY(V_JUMP * this.gravityModifier);
     }
   }

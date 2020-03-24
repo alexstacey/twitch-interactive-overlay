@@ -13,3 +13,4 @@ node_modules/
 !.editorconfig
 game-assets/
 app/scripts/secrets.js
+package-lock.json
