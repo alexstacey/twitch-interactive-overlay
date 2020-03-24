@@ -19,9 +19,9 @@ Twitch Interactive Chat Overlay is a simple and fun overlay to add to your strea
 
 Adding the overlay to your stream is super simple!
 
-1. Add the following link as you browser source to your streaming software (like OBS): [https://talk2megooseman.github.io/twitch-interactive-overlay/?channel=YOUR_CHANNEL_NAME_HERE](https://talk2megooseman.github.io/twitch-interactive-overlay?channel=YOUR_CHANNEL_NAME_HERE)
+1. Add the following link as you browser source to your streaming software (like OBS): [https://alexstacey.github.io/twitch-interactive-overlay/?channel=YOUR_CHANNEL_NAME_HERE](https://alexstacey.github.io/twitch-interactive-overlay?channel=YOUR_CHANNEL_NAME_HERE)
 
-2. Change the YOUR_CHANNEL_NAME_HERE in the url to match your channel's name like the following: https://talk2megooseman.github.io/twitch-interactive-overlay/?channel=talk2megooseman
+2. Change the YOUR_CHANNEL_NAME_HERE in the url to match your channel's name like the following: https://alexstacey.github.io/twitch-interactive-overlay/?channel=talk2megooseman
 
 3. Type `!commands` or `!audio` to see a list of commands on screen
 
